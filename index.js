@@ -8,12 +8,10 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-    if (message.author.bot) return;
-    if (message.content.indexOf(process.env.PREFIX) !== 0) return;
-    if (content.length > 10) return;
-
-    const carrotOnly = true;
+    var carrotOnly = true;
     const content = message.content;
+    if (message.author.bot) return;
+    if (message.length > 10) return;
     for (var i = 0; i < content.length; i++) {
         if (content.charAt(i) !== '^') {
             carrotOnly = false;
