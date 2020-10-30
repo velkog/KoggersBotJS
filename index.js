@@ -17,7 +17,7 @@ client.on("message", message => {
         try {
             message.react(POGGERS);
         } catch {
-            message.react("😂");
+            message.react("😍");
         }
     }
     // Carrot Replies
