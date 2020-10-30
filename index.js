@@ -1,24 +1,31 @@
-// This line MUST be first, for discord.js to read the process envs!
 require('dotenv').config(); 
+
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
+const POGGERS = "710012265394470982";
+
 client.on("ready", () => {
-  console.log("KoggersBot ready!");
+    console.log("KoggersBot ready!");
 });
 
 client.on("message", message => {
-    var carrotOnly = true;
-    const content = message.content;
     if (message.author.bot) return;
-    if (message.length > 10) return;
-    for (var i = 0; i < content.length; i++) {
-        if (content.charAt(i) !== '^') {
-            carrotOnly = false;
-            break;
+    const content = message.content.toLowerCase();
+    // Velkog React
+    if (content.includes("velkog")) {
+        try {
+            message.react(POGGERS);
+        } catch {
+            message.react("😂");
         }
     }
-    if (carrotOnly) message.channel.send(content);
+    // Carrot Replies
+    if (message.length > 10) return;
+    for (var i = 0; i < content.length; i++) {
+        if (content.charAt(i) !== '^') return;
+    }
+    message.channel.send(content);
 });
 
 client.login();
