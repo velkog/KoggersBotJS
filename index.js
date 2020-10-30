@@ -11,17 +11,19 @@ client.on("ready", () => {
 
 client.on("message", message => {
     if (message.author.bot) return;
+    if (!message.content || message.content === 0) return;
     const content = message.content.toLowerCase();
-    // Velkog React
+
     if (content.includes("velkog")) {
         try {
             message.react(POGGERS);
         } catch {
             message.react("😍");
         }
+        return;
     }
-    // Carrot Replies
-    if (message.length > 10) return;
+
+    if (message.length > 10 || message.length === 0) return;
     for (var i = 0; i < content.length; i++) {
         if (content.charAt(i) !== '^') return;
     }
