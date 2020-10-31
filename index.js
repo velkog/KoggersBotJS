@@ -16,16 +16,12 @@ client.on("message", message => {
     const content = message.content.toLowerCase();
 
     if (content.includes("velkog")) {
-        message.react(POGGERS)
-            .then(console.log)
-            .catch(console.error);
+        message.react(POGGERS).catch(console.error);
         return;
     }
 
     if (content.includes("slav")) {
-        message.react(SLAV)
-            .then(console.log)
-            .catch(console.error);
+        message.react(SLAV).catch(console.error);
         return;
     }
 
