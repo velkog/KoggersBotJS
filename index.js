@@ -4,6 +4,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 const POGGERS = "710012265394470982";
+const SLAV = "754153365696544820";
 
 client.on("ready", () => {
     console.log("KoggersBot ready!");
@@ -23,8 +24,17 @@ client.on("message", message => {
         return;
     }
 
+    if (content.includes("slav")) {
+        try {
+            message.react(POGGERS);
+        } catch {
+            message.react("😂");
+        }
+        return;
+    }
+
     if (message.length > 10 || message.length === 0) return;
-    for (var i = 0; i < content.length; i++) {
+    for (let i = 0; i < content.length; i++) {
         if (content.charAt(i) !== '^') return;
     }
     message.channel.send(content);
