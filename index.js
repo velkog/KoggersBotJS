@@ -16,7 +16,7 @@ client.on("message", message => {
     const content = message.content.toLowerCase();
     if (content.length === 0) return;
     
-    if (content === "kkoggers") {
+    if (content.includes("kkoggers")) {
         const attachment = new Discord.MessageAttachment("https://raw.githubusercontent.com/velkog/KoggersBot/main/assets/kkoggers.gif");
         message.channel.send(attachment);
         return;
