@@ -1,6 +1,6 @@
 require('dotenv').config(); 
 
-const { Discord, MessageAttachment } = require("discord.js");
+const Discord = require("discord.js");
 const client = new Discord.Client();
 
 const POGGERS = "710012265394470982";
