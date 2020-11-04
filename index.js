@@ -17,7 +17,7 @@ client.on("message", message => {
     if (content.length === 0) return;
     
     if (content === "kkoggers") {
-        const attachment = new MessageAttachment("https://raw.githubusercontent.com/velkog/KoggersBot/main/assets/kkoggers.gif");
+        const attachment = new Discord.MessageAttachment("https://raw.githubusercontent.com/velkog/KoggersBot/main/assets/kkoggers.gif");
         message.channel.send(attachment);
         return;
     }
