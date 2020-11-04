@@ -14,7 +14,14 @@ client.on("message", message => {
     if (message.author.bot) return;
     if (!message.content || message.content === 0) return;
     const content = message.content.toLowerCase();
-
+    if (content.length === 0) return;
+    
+    if (content === "kkoggers") {
+        const attachment = new MessageAttachment("https://raw.githubusercontent.com/velkog/KoggersBot/main/assets/kkoggers.gif");
+        message.channel.send(attachment);
+        return;
+    }
+    
     if (content.includes("velkog")) {
         message.react(POGGERS).catch(console.error);
         return;
@@ -25,7 +32,7 @@ client.on("message", message => {
         return;
     }
 
-    if (message.length > 10 || message.length === 0) return;
+    if (content.length > 50) return;
     for (let i = 0; i < content.length; i++) {
         if (content.charAt(i) !== '^') return;
     }
