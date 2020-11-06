@@ -20,20 +20,14 @@ client.on("message", message => {
         emotes.forEach(emote => content = content.replace(emote, ""));
         emotes.forEach(function(emote) {
             // TODO: This is really dumb, use a regex or something
-            const emoteId = emote.split(":")[2].slice(0,-1);
-            switch(emoteId) {
-                case POGGERS:
-                    message.react(POGGERS).catch(console.error);
-                    break;
-                case CLAWS:
-                    message.react(CLAWS).catch(console.error);
-                    break;
-                case SLAV:
-                    message.react(SLAV).catch(console.error);
-                    break;
-                default:
-                    return;
-            }
+            console.log(emote.split(":")[1]);
+            const emoteTitle = emote.split(":")[1];
+            if (emoteTitle.includes("velkogPoggers")) 
+                message.react(POGGERS).catch(console.error);
+            if (emoteTitle.includes("slavMovement"))
+                message.react(SLAV).catch(console.error);
+            if (emoteTitle.includes("velkogClaws"))
+                message.react(CLAWS).catch(console.error);
         });
     }
     if (content.length === 0) return;
