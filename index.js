@@ -19,17 +19,14 @@ client.on("message", message => {
     if (content.includes("kkoggers")) {
         const attachment = new Discord.MessageAttachment("https://raw.githubusercontent.com/velkog/KoggersBot/main/assets/kkoggers.gif");
         message.channel.send(attachment);
-        return;
     }
     
     if (content.includes("velkog")) {
         message.react(POGGERS).catch(console.error);
-        return;
     }
 
     if (content.includes("slav")) {
         message.react(SLAV).catch(console.error);
-        return;
     }
 
     if (content.length > 50) return;
