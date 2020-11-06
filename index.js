@@ -18,7 +18,6 @@ client.on("message", message => {
     const emotes = content.match(/<:.+?:\d+>/g);
     if (emotes) {
         emotes.forEach(emote => content = content.replace(emote, ""));
-        emotes.forEach(processEmote);
         emotes.forEach(function(emote) {
             // TODO: This is really dumb, use a regex or something
             const emoteId = emote.split(":")[2].slice(0,-1);
