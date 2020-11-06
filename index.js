@@ -5,6 +5,7 @@ const client = new Discord.Client();
 
 const POGGERS = "710012265394470982";
 const SLAV = "754153365696544820";
+const CLAWS = "730730742728097803";
 
 client.on("ready", () => {
     console.log("KoggersBot ready!");
@@ -15,7 +16,10 @@ client.on("message", message => {
     if (!message.content || message.content === 0) return;
     let content = message.content.toLowerCase();
     const emotes = content.match(/<:.+?:\d+>/g);
-    emotes.forEach(emote => content = content.replace(emote, ""));
+    if (emotes) {
+        emotes.forEach(emote => content = content.replace(emote, ""));
+        emotes.forEach(processEmote);
+    }
     if (content.length === 0) return;
     
     if (content.includes("kkoggers")) {
@@ -37,5 +41,17 @@ client.on("message", message => {
     }
     message.channel.send(content);
 });
+
+function processEmote(emote, index) {
+    if (emote.includes("velkogPoggers")) {
+       message.react(POGGERS).catch(console.error);
+    }
+    if (emote.inclues("velkogClaws")) {
+        message.react(CLAWS).catch(console.error);
+    }
+    if (emote.inclues("slavMoment")) {
+        message.react(SLAV).catch(console.error);
+    }
+}
 
 client.login();
