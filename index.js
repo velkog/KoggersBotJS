@@ -13,7 +13,9 @@ client.on("ready", () => {
 client.on("message", message => {
     if (message.author.bot) return;
     if (!message.content || message.content === 0) return;
-    const content = message.content.toLowerCase();
+    let content = message.content.toLowerCase();
+    const emotes = content.match(/<:.+?:\d+>/g));
+    emotes.forEach(emote => content = content.replace(emote, ""));
     if (content.length === 0) return;
     
     if (content.includes("kkoggers")) {
