@@ -45,6 +45,7 @@ client.on("message", message => {
 function processEmote(emote, index) {
     console.log(emote.split(":"));
     console.log(emote.split(":")[2]);
+    console.log(typeof emote.split(":")[2]);
     const emoteId = emote.split(":")[2];
     switch(emoteId) {
         case POGGERS:
