@@ -43,15 +43,17 @@ client.on("message", message => {
 });
 
 function processEmote(emote, index) {
-    if (emote.includes("velkogPoggers")) {
-       message.react(POGGERS).catch(console.error);
-    }
-    if (emote.inclues("velkogClaws")) {
-        message.react(CLAWS).catch(console.error);
-    }
-    if (emote.inclues("slavMoment")) {
-        message.react(SLAV).catch(console.error);
-    }
+    console.log(typeof emote);
+    console.log(emote);
+//     if (emote.includes("velkogPoggers")) {
+//        message.react(POGGERS).catch(console.error);
+//     }
+//     if (emote.inclues("velkogClaws")) {
+//         message.react(CLAWS).catch(console.error);
+//     }
+//     if (emote.inclues("slavMoment")) {
+//         message.react(SLAV).catch(console.error);
+//     }
 }
 
 client.login();
