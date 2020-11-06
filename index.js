@@ -20,13 +20,12 @@ client.on("message", message => {
         emotes.forEach(emote => content = content.replace(emote, ""));
         emotes.forEach(function(emote) {
             // TODO: This is really dumb, use a regex or something
-            console.log(emote.split(":")[1]);
             const emoteTitle = emote.split(":")[1];
-            if (emoteTitle.includes("velkogPoggers")) 
+            if (emoteTitle.includes("velkogpoggers")) 
                 message.react(POGGERS).catch(console.error);
-            if (emoteTitle.includes("slavMovement"))
+            if (emoteTitle.includes("slavmoment"))
                 message.react(SLAV).catch(console.error);
-            if (emoteTitle.includes("velkogClaws"))
+            if (emoteTitle.includes("velkogclaws"))
                 message.react(CLAWS).catch(console.error);
         });
     }
