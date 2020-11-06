@@ -19,6 +19,23 @@ client.on("message", message => {
     if (emotes) {
         emotes.forEach(emote => content = content.replace(emote, ""));
         emotes.forEach(processEmote);
+        emotes.forEach(function(emote) {
+            // TODO: This is really dumb, use a regex or something
+            const emoteId = emote.split(":")[2].slice(0,-1);
+            switch(emoteId) {
+                case POGGERS:
+                    message.react(POGGERS).catch(console.error);
+                    break;
+                case CLAWS:
+                    message.react(CLAWS).catch(console.error);
+                    break;
+                case SLAV:
+                    message.react(SLAV).catch(console.error);
+                    break;
+                default:
+                    return;
+            }
+        });
     }
     if (content.length === 0) return;
     
@@ -41,23 +58,5 @@ client.on("message", message => {
     }
     message.channel.send(content);
 });
-
-function processEmote(emote, index) {
-    // TODO: This is really dumb, use a regex or something
-    const emoteId = emote.split(":")[2].slice(0,-1);
-    switch(emoteId) {
-        case POGGERS:
-            message.react(POGGERS).catch(console.error);
-            break;
-        case CLAWS:
-            message.react(CLAWS).catch(console.error);
-            break;
-        case SLAV:
-            message.react(SLAV).catch(console.error);
-            break;
-        default:
-            return;
-    }
-}
 
 client.login();
