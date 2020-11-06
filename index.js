@@ -43,17 +43,20 @@ client.on("message", message => {
 });
 
 function processEmote(emote, index) {
-    console.log(typeof emote);
-    console.log(emote);
-//     if (emote.includes("velkogPoggers")) {
-//        message.react(POGGERS).catch(console.error);
-//     }
-//     if (emote.inclues("velkogClaws")) {
-//         message.react(CLAWS).catch(console.error);
-//     }
-//     if (emote.inclues("slavMoment")) {
-//         message.react(SLAV).catch(console.error);
-//     }
+    const emoteId = emote.split(":")[2];
+    switch(emoteId) {
+        case POGGERS:
+            message.react(POGGERS).catch(console.error);
+            break;
+        case CLAWS:
+            message.react(CLAWS).catch(console.error);
+            break;
+        case SLAV:
+            message.react(SLAV).catch(console.error);
+            break;
+        default:
+            return;
+    }
 }
 
 client.login();
