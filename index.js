@@ -43,10 +43,8 @@ client.on("message", message => {
 });
 
 function processEmote(emote, index) {
-    console.log(emote.split(":"));
-    console.log(emote.split(":")[2]);
-    console.log(typeof emote.split(":")[2]);
-    const emoteId = emote.split(":")[2];
+    // TODO: This is really dumb, use a regex or something
+    const emoteId = emote.split(":")[2].slice(0,-1);
     switch(emoteId) {
         case POGGERS:
             message.react(POGGERS).catch(console.error);
