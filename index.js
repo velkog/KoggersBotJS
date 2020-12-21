@@ -44,6 +44,10 @@ client.on("message", message => {
         message.react(SLAV).catch(console.error);
     }
     
+   if (content.includes("velklog")) {
+        message.react("🚽").catch(console.error);   
+    }
+    
     if (content.includes("shut up dank")) {
         message.channel.send("Yeah, shut up Dank")
     }
