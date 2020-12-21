@@ -43,6 +43,10 @@ client.on("message", message => {
     if (content.includes("slav")) {
         message.react(SLAV).catch(console.error);
     }
+    
+    if (content.includes("shut up dank")) {
+        message.channel.send("Yeah, shut up Dank")
+    }
 
     if (content.length > 50) return;
     for (let i = 0; i < content.length; i++) {
