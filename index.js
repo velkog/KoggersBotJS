@@ -7,6 +7,8 @@ const POGGERS = "710012265394470982";
 const SLAV = "754153365696544820";
 const CLAWS = "730730742728097803";
 
+const TIMBOSID = "329633490008276992";
+
 client.on("ready", () => {
     console.log("KoggersBot ready!");
 });
@@ -52,29 +54,32 @@ client.on("message", message => {
         message.channel.send("Yeah, shut up Dank")
     }
 
-    if (content.includes("timbos")) {
-        let branch = Math.floor(Math.random() * 5);
-        switch(branch) {
-          case 0:
-            message.channel.send("No.")
-            break;
-          case 1:
-            message.channel.send("Nah.")
-            break;
-          case 2:
-            message.channel.send("Nope.")
-            break;
-          case 3:
-            message.channel.send("Negativo.")
-            break;
-          case 4:
-            message.channel.send("Alright, fine.")
+    if (message.sender === TIMBOSID && content.includes("timbos")) {
+        if (content.includes("mod") || content.includes("admin") {
+          let branch = Math.floor(Math.random() * 5);
+          switch(branch) {
+            case 0:
+              message.channel.send("No.")
+              break;
+            case 1:
+              message.channel.send("Nah.")
+              break;
+            case 2:
+              message.channel.send("Nope.")
+              break;
+            case 3:
+              message.channel.send("Negativo.")
+              break;
+            case 4:
+              message.channel.send("Alright, fine.")
               setTimeout(function(){
                 message.channel.send("LOL, jk, no.")
               }, 1500);
-            break;
+              break;
           default:
-        } 
+            break;
+        }
+      }
     }
     
     if (content.length > 50) return;
