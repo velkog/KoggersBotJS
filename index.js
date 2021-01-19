@@ -55,7 +55,7 @@ client.on("message", message => {
     }
 
     if (message.sender === TIMBOSID && content.includes("timbos")) {
-        if (content.includes("mod") || content.includes("admin") {
+        if (content.includes("mod") || content.includes("admin")) {
           let branch = Math.floor(Math.random() * 5);
           switch(branch) {
             case 0:
