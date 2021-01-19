@@ -52,6 +52,10 @@ client.on("message", message => {
         message.channel.send("Yeah, shut up Dank")
     }
 
+    if (content.includes("timbos")) {
+        message.channel.send("No.")
+    }
+    
     if (content.length > 50) return;
     for (let i = 0; i < content.length; i++) {
         if (content.charAt(i) !== '^') return;
