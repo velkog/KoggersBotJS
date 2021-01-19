@@ -71,7 +71,7 @@ client.on("message", message => {
             message.channel.send("Alright, fine.")
               setTimeout(function(){
                 message.channel.send("LOL, jk, no.")
-              }, 750);
+              }, 1500);
             break;
           default:
         } 
