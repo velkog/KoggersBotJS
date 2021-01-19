@@ -54,8 +54,10 @@ client.on("message", message => {
         message.channel.send("Yeah, shut up Dank")
     }
 
-    if (message.sender === TIMBOSID || content.includes("timbos")) {
-        if (content.includes("mod") || content.includes("admin")) {
+    if (message.sender === TIMBOSID 
+        || content.includes("timbos")) 
+        && (content.includes("mod") 
+        || content.includes("admin")) {
           let branch = Math.floor(Math.random() * 5);
           switch(branch) {
             case 0:
