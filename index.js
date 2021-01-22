@@ -19,9 +19,10 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-    console.log(message.sender);
+    console.log(message.author.id);
     console.log(TIMBOSID);
-    console.log(message.channel);
+    console.log(message.channel.id);
+    console.log("727731808057163869" === message.channel.id);
     
     if (message.author.bot) return;
     if (!message.content || message.content === 0) return;
