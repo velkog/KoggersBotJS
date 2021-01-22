@@ -39,12 +39,14 @@ client.on("message", message => {
         emotes.forEach(function(emote) {
             // TODO: This is really dumb, use a regex or something
             const emoteTitle = emote.split(":")[1];
+            if (emoteTitle.includes("velkogclaws"))
+                message.react(CLAWS).catch(console.error);
+            if (emoteTitle.includes("dankw"))
+                message.react(DANK).catch(console.error);
             if (emoteTitle.includes("velkogpoggers")) 
                 message.react(POGGERS).catch(console.error);
             if (emoteTitle.includes("slavmoment"))
                 message.react(SLAV).catch(console.error);
-            if (emoteTitle.includes("velkogclaws"))
-                message.react(CLAWS).catch(console.error);
         });
     }
     if (content.length === 0) return;
