@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 // Channels
-const FART_CHANNEL = "802053478863994891";
+const FART_CHANNEL = "802054374163349506";
 
 // Emotes
 const POGGERS = "710012265394470982";
