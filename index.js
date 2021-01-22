@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 // Channels
-const FART_CHANNEL = 727731808057163869;
+const FART_CHANNEL = "802053478863994891";
 
 // Emotes
 const POGGERS = "710012265394470982";
@@ -12,17 +12,15 @@ const SLAV = "754153365696544820";
 const CLAWS = "730730742728097803";
 
 // Users
-const TIMBOSID = 329633490008276992;
+const TIMBOSID = "515771516844244994";
 
 client.on("ready", () => {
     console.log("KoggersBot ready!");
 });
 
 client.on("message", message => {
-    console.log(message.author.id);
-    console.log(TIMBOSID);
-    console.log(message.channel.id);
-    console.log("727731808057163869" === message.channel.id);
+    console.log(message.author.id === TIMBOSID);
+    console.log(FART_CHANNEL === message.channel.id);
     
     if (message.author.bot) return;
     if (!message.content || message.content === 0) return;
