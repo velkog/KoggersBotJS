@@ -23,6 +23,10 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
+    if (message.channel.id === FART_CHANNEL && message.content !== FART_MSG) {
+        message.delete();
+    }
+    
     if (message.author.bot) return;
     if (!message.content || message.content === 0) return;
     let content = message.content.toLowerCase();
@@ -88,10 +92,6 @@ client.on("message", message => {
         default:
           break;
       }
-    }
-    
-    if (message.channel.id === FART_CHANNEL && message.content !== FART_MSG) {
-        message.delete();
     }
     
     if (content.length > 50) return;
