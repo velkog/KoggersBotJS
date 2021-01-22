@@ -11,15 +11,19 @@ const POGGERS = "710012265394470982";
 const SLAV = "754153365696544820";
 const CLAWS = "730730742728097803";
 
+// Messages
+const FART_MSG = "https://cdn.discordapp.com/attachments/800953926026788875/801964653051248660/AddFartChannel.mp4"
+
 // Users
-const TIMBOSID = "515771516844244994";
+const TIMBOSID = "329633490008276992";
+
+
 
 client.on("ready", () => {
     console.log("KoggersBot ready!");
 });
 
 client.on("message", message => {
-    console.log(message.author.id === TIMBOSID);
     console.log(FART_CHANNEL === message.channel.id);
     
     if (message.author.bot) return;
@@ -62,7 +66,7 @@ client.on("message", message => {
         message.channel.send("Yeah, shut up Dank")
     }
 
-    if ((message.sender === TIMBOSID || content.includes("timbos")) 
+    if ((message.author.id === TIMBOSID || content.includes("timbos")) 
         && (content.includes("mod") || content.includes("admin"))) {
       let branch = Math.floor(Math.random() * 5);
       switch(branch) {
@@ -87,6 +91,10 @@ client.on("message", message => {
         default:
           break;
       }
+    }
+    
+    if (message.channel.id === FART_CHANNEL && content !== FART_MSG) {
+        message.delete();
     }
     
     if (content.length > 50) return;
