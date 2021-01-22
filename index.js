@@ -25,6 +25,7 @@ client.on("ready", () => {
 client.on("message", message => {
     if (message.channel.id === FART_CHANNEL && message.content !== FART_MSG) {
         message.delete();
+        return;
     }
     
     if (message.author.bot) return;
