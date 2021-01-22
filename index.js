@@ -91,7 +91,7 @@ client.on("message", message => {
       }
     }
     
-    if (message.channel.id === FART_CHANNEL && content !== FART_MSG) {
+    if (message.channel.id === FART_CHANNEL && message.content !== FART_MSG) {
         message.delete();
     }
     
