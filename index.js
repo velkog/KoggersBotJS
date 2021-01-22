@@ -24,8 +24,6 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-    console.log(FART_CHANNEL === message.channel.id);
-    
     if (message.author.bot) return;
     if (!message.content || message.content === 0) return;
     let content = message.content.toLowerCase();
