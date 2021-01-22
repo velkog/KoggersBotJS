@@ -7,12 +7,14 @@ const client = new Discord.Client();
 const FART_CHANNEL = "802054374163349506";
 
 // Emotes
+const CLAWS = "730730742728097803";
+const DANK = "801912169339944960";
 const POGGERS = "710012265394470982";
 const SLAV = "754153365696544820";
-const CLAWS = "730730742728097803";
 
 // Messages
 const FART_MSG = "https://cdn.discordapp.com/attachments/800953926026788875/801964653051248660/AddFartChannel.mp4"
+const KKOGGERS_MSG = "https://raw.githubusercontent.com/velkog/KoggersBot/main/assets/kkoggers.gif";
 
 // Users
 const TIMBOSID = "329633490008276992";
@@ -48,7 +50,7 @@ client.on("message", message => {
     if (content.length === 0) return;
     
     if (content.includes("kkoggers")) {
-        const attachment = new Discord.MessageAttachment("https://raw.githubusercontent.com/velkog/KoggersBot/main/assets/kkoggers.gif");
+        const attachment = new Discord.MessageAttachment(KKOGGERS_MSG);
         message.channel.send(attachment);
     }
     
@@ -58,6 +60,10 @@ client.on("message", message => {
 
     if (content.includes("slav")) {
         message.react(SLAV).catch(console.error);
+    }
+    
+    if (content.includes("dank")) {
+        message.react(DANK).catch(console.error);
     }
     
    if (content.includes("velklog")) {
