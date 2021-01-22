@@ -18,7 +18,6 @@ const FART_MSG = "https://cdn.discordapp.com/attachments/800953926026788875/8019
 const TIMBOSID = "329633490008276992";
 
 
-
 client.on("ready", () => {
     console.log("KoggersBot ready!");
 });
