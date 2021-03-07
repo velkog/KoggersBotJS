@@ -110,6 +110,10 @@ client.on("message", message => {
       }
     }
     
+    if (content === "nice.") {
+        message.channel.send("nice.");
+    }
+    
     if (content.length > 50) return;
     for (let i = 0; i < content.length; i++) {
         if (content.charAt(i) !== '^') return;
