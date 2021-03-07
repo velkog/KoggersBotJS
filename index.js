@@ -18,6 +18,7 @@ const KKOGGERS_MSG = "https://raw.githubusercontent.com/velkog/KoggersBot/main/a
 
 // Users
 const TIMBOSID = "329633490008276992";
+const TUXID = "140767944257830912";
 
 
 client.on("ready", () => {
@@ -74,6 +75,12 @@ client.on("message", message => {
     
     if (content.includes("shut up dank")) {
         message.channel.send("Yeah, shut up Dank")
+    }
+    
+    if (content.includes("tux") && content.includes("vc") && content.includes("join")) {
+        let tuxTag = "<@" + TUXID + ">";
+        let clawsEmote = ":" + CLAWS + ":"
+        message.channel.send("tuxTag Seriously bro, just join VC clawsEmote ");
     }
 
     if ((message.author.id === TIMBOSID || content.includes("timbos")) 
