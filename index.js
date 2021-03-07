@@ -79,7 +79,7 @@ client.on("message", message => {
     
     if (content.includes("tux") && content.includes("vc") && content.includes("join")) {
         let tuxTag = "<@" + TUXID + ">";
-        let clawsEmote = ":" + CLAWS + ":"
+        let clawsEmote = "<:velkogClaws_alt:" + CLAWS + ">";
         message.channel.send(tuxTag + " Seriously bro, just join VC " + clawsEmote);
     }
 
