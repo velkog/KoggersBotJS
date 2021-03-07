@@ -110,7 +110,7 @@ client.on("message", message => {
       }
     }
     
-    if (content === "nice.") {
+    if (content === "nice") {
         message.channel.send("nice.");
     }
     
