@@ -80,7 +80,7 @@ client.on("message", message => {
     if (content.includes("tux") && content.includes("vc") && content.includes("join")) {
         let tuxTag = "<@" + TUXID + ">";
         let clawsEmote = ":" + CLAWS + ":"
-        message.channel.send("${tuxTag} Seriously bro, just join VC ${clawsEmote}");
+        message.channel.send(tuxTag + " Seriously bro, just join VC " + clawsEmote);
     }
 
     if ((message.author.id === TIMBOSID || content.includes("timbos")) 
