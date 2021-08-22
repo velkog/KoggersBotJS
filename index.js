@@ -20,12 +20,16 @@ const KKOGGERS_MSG = "https://raw.githubusercontent.com/velkog/KoggersBot/main/a
 const TIMBOSID = "329633490008276992";
 const TUXID = "140767944257830912";
 
+// Roles
+
 
 client.on("ready", () => {
     console.log("KoggersBot ready!");
 });
 
 client.on("message", message => {
+    var SHADOW_BANNED_ROLE = message.guild.roles.find(role => role.name === "Private Splash Ping");
+    console.log(SHADOW_BANNED_ROLE);
     if (message.channel.id === FART_CHANNEL && message.content !== FART_MSG) {
         message.delete();
         return;
