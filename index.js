@@ -28,7 +28,14 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-    var SHADOW_BANNED_ROLE = message.guild.roles.find(role => role.name === "Private Splash Ping");
+    if (message.member.roles.find(role => role.id === '&878963262274818068')) {
+        console.log("Hello:");
+    }
+    else if (message.member.roles.find(role => role.id === '878963262274818068')) {
+        console.log("Sup");
+    } else {
+        console.log("hi");
+    }
     console.log(SHADOW_BANNED_ROLE);
     if (message.channel.id === FART_CHANNEL && message.content !== FART_MSG) {
         message.delete();
