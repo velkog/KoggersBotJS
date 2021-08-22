@@ -28,13 +28,13 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-    if(message.member.roles.cache.has("878963262274818068")) {
+    if(message.member.roles.cache.some(role => role.id === "878963262274818068")) {
         console.log(1);
     }
-    if(message.member.roles.cache.has(878963262274818068)) {
+    if(message.member.roles.cache.some(role => role.id === 878963262274818068)) {
         console.log(2);
     }
-    if(message.member.roles.cache.has("&878963262274818068")) {
+    if(message.member.roles.cache.some(role => role.id === "&878963262274818068")) {
         console.log(3);
     }
     if (message.member.roles.find(role => role.id === '&878963262274818068')) {
