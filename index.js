@@ -37,9 +37,6 @@ client.on("message", message => {
     if(message.member.roles.cache.some(role => role.id === "&878963262274818068")) {
         console.log(3);
     }
-    if (message.member.roles.find(role => role.id === '&878963262274818068')) {
-        console.log("Hello:");
-    }
     //console.log(SHADOW_BANNED_ROLE);
     if (message.channel.id === FART_CHANNEL && message.content !== FART_MSG) {
         message.delete();
