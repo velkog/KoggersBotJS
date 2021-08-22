@@ -28,15 +28,19 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
+    if(message.member.roles.cache.has("878963262274818068")) {
+        console.log(1);
+    }
+    if(message.member.roles.cache.has(878963262274818068)) {
+        console.log(2);
+    }
+    if(message.member.roles.cache.has("&878963262274818068")) {
+        console.log(3);
+    }
     if (message.member.roles.find(role => role.id === '&878963262274818068')) {
         console.log("Hello:");
     }
-    else if (message.member.roles.find(role => role.id === '878963262274818068')) {
-        console.log("Sup");
-    } else {
-        console.log("hi");
-    }
-    console.log(SHADOW_BANNED_ROLE);
+    //console.log(SHADOW_BANNED_ROLE);
     if (message.channel.id === FART_CHANNEL && message.content !== FART_MSG) {
         message.delete();
         return;
