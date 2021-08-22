@@ -21,26 +21,17 @@ const TIMBOSID = "329633490008276992";
 const TUXID = "140767944257830912";
 
 // Roles
-
+const SHADOW_BANNED_ROLE = "878963262274818068";
 
 client.on("ready", () => {
     console.log("KoggersBot ready!");
 });
 
 client.on("message", message => {
-    if(message.member.roles.cache.some(role => role.name === "Shadow Banned")) {
-        console.log(1);
+    if(message.member.roles.cache.some(role => role.id === SHADOW_BANNED_ROLE)) {
+        message.delete();
+        return;
     }
-    if(message.member.roles.cache.some(role => role.id === "878963262274818068")) {
-        console.log(2);
-    }
-    if(message.member.roles.cache.some(role => role.id === 878963262274818068)) {
-        console.log(3);
-    }
-    if(message.member.roles.cache.some(role => role.id === "&878963262274818068")) {
-        console.log(4);
-    }
-    //console.log(SHADOW_BANNED_ROLE);
     if (message.channel.id === FART_CHANNEL && message.content !== FART_MSG) {
         message.delete();
         return;
